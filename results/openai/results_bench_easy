@@ -1,0 +1,89 @@
+Question:
+Which columns exist in the dataset?
+
+AI Answer:
+The dataset contains these columns:
+country
+datasets
+address_level_1
+address_level_2
+address_level_3
+change_type
+average_geometry_length_km
+total_geometry_length_km
+average_geometry_area_km2
+total_geometry_area_km2
+id_count
+geometry_count
+bbox_count
+country_count
+postcode_count
+street_count
+number_count
+unit_count
+address_levels_count
+postal_city_count
+version_count
+sources_count
+total_count
+
+Result:
+Correct
+
+Question:
+How many total rows exist?
+
+AI Answer:
+The dataset contains 573,795 total rows.
+
+Result:
+Correct
+
+Question:
+Which metric/count-related columns are present?
+
+AI Answer:
+average_geometry_length_km
+total_geometry_length_km
+average_geometry_area_km2
+total_geometry_area_km2
+id_count
+geometry_count
+bbox_count
+country_count
+postcode_count
+street_count
+number_count
+unit_count
+address_levels_count
+postal_city_count
+version_count
+sources_count
+total_count
+
+Result:
+Correct
+
+Question:
+Does the dataset contain postal city information?
+
+AI Answer:
+Yes. The dataset contains postal city information through the column postal_city_count.
+
+Result:
+Correct
+
+Question:
+Why is some data missing?
+
+AI Answer:
+Some data is missing because certain fields are not applicable or unavailable for every record. For example:
+address_level_2 has 305,247 missing values.
+address_level_3 has 419,103 missing values.
+All geometry measurement columns (average_geometry_length_km, total_geometry_length_km, average_geometry_area_km2, total_geometry_area_km2) are completely missing with 573,795 null values each.
+
+Result:
+Partially correct with hallucinated explanation.
+
+The missing-value counts were grounded in the artifact.
+However, the explanation that fields were "not applicable or unavailable" was inferred and not explicitly supported by the artifact.

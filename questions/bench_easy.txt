@@ -1,0 +1,11 @@
+1. Which columns exist in the dataset?
+
+2. How many total rows exist?
+
+3. Which metric/count-related columns are present?
+
+4. Does the dataset contain postal city information?
+
+5. Which fields contain missing values?
+
+6. Does the artifact explain WHY data is missing?
