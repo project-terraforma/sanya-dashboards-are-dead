@@ -1,0 +1,75 @@
+CONTEXT FILE: https://github.com/project-terraforma/Planet-Fetch/blob/main/contexts/2025-04-23.0/v2_hierarchical.txt
+
+==============================
+REPORT FOR context_fetch_4-23.txt
+==============================
+
+=== PROMPT RELIABILITY CHECK ===
+
+[SUPPORTED] What schema/column/field information does the context file provide?
+[SUPPORTED] What dataset statistics does the context file provide?
+[SUPPORTED] What coverage limitations should I mention?
+[RISKY] What does the context file say about missing or incomplete data?
+[SUPPORTED] Which release/version/date is this based on?
+[SUPPORTED] Does the file include prompt examples or usage guidance?
+[SUPPORTED] What should I avoid asking the LLM based only on this file?
+
+=== RUBRIC-BASED PROMPT RISKS ===
+
+Issue: missing_data_guidance_weak
+Rubric category: Missing Data Documentation
+Hallucination risk: The file does not clearly explain missing or incomplete data, so the LLM may invent causes.
+Suggested fix: Ask the LLM to only state missing-data warnings that are explicitly in the file.
+
+
+=== SAFER REWRITTEN PROMPTS ===
+
+q1_schema: Using only this context file, summarize what schema, column, field, or attribute information it provides. If something is not explained, say it is not explained in the file.
+q2_statistics: Using only this context file, list the dataset statistics it provides. Do not calculate new totals unless the file explicitly gives enough information.
+q3_coverage: Using only this context file, explain what coverage limitations are stated. Mention geography, sources, themes, or availability only if the file states them.
+q4_missing_data: Using only this context file, explain what it says about missing or incomplete data. Do not guess causes that the file does not state.
+q5_version: Before answering, identify the release, version, date, or generation time from this context file. Answer only for that stated release or date.
+q6_prompt_examples: Use this context file as reference material. Write a specific prompt that tells the LLM what information to rely on and what not to guess.
+q7_unsupported: Ask: What can this context file not support? If the file does not state something, say 'not stated in the context file' instead of guessing.
+
+=== PINPOINTED CONTEXT FILE EVIDENCE ===
+
+role: line 54: YOUR ROLE AS THE LLM:
+rules: line 58: RULES:
+only use: line 59: 1. Only use information contained in this context file.
+attribute: line 51: attribute availability, and theme-level statistics. In the metrics dataset, a row usually represents an aggregated count over a group
+attribute: line 82: COMMON ATTRIBUTES ACROSS THEMES
+attributes: line 82: COMMON ATTRIBUTES ACROSS THEMES
+definition: line 94: COMMON ATTRIBUTE DEFINITIONS
+statistics: line 5: └── Global Statistics
+statistics: line 45: a prompt window, but serves as a summary/aggregation of the map data. All statistics and data information comes
+total: line 6: ├── Total Records: 4,230,811,939
+total: line 71: TOTAL THEMES
+records: line 6: ├── Total Records: 4,230,811,939
+records: line 98: sources_count: Number of data sources contributing to the records
+coverage: line 11: └── Coverage: 5 metrics available
+coverage: line 15: └── Coverage: 5 metrics available
+country: line 143: - country_count: 429,683,781 (100.00%)
+country: line 272: - country_count: 5,472,377 (99.99%)
+countries: line 120: - top countries
+countries: line 305: Top Countries by Record Count
+version: line 88: version_count
+month: line 49: You'll be given a particular month's context file and be able to view a high-level yet informational summary of
+example: line 3: ├── Sections: 1 (Overview), 2 (Structure), 5 (Examples)
+example: line 64: 6. Treat example user queries as demonstrations of format only, not as reusable answers.
+examples: line 3: ├── Sections: 1 (Overview), 2 (Structure), 5 (Examples)
+prompt: line 45: a prompt window, but serves as a summary/aggregation of the map data. All statistics and data information comes
+unavailable: line 60: 2. If a statistic is not present, say : "information is currently unavailable".
+do not infer: line 62: 4. Do not infer values that are not explicitly provided.
+only use information contained: line 59: 1. Only use information contained in this context file.
+
+=== PROMPT READINESS SCORE ===
+
+Prompt Readiness Score: 87/100
+
+Score deductions:
+-10 points: q4_missing_data was marked RISKY
+-3 points: rubric_prompt_risks was marked ISSUES
+
+=== SUMMARY ===
+This context file is a strong prompt reference. Still include source limits.

@@ -1,0 +1,83 @@
+CONTEXT FILE = https://github.com/project-terraforma/Ashwin-DaD
+
+==============================
+REPORT FOR context_Ashwin.txt
+==============================
+
+=== PROMPT RELIABILITY CHECK ===
+
+[SUPPORTED] What schema/column/field information does the context file provide?
+[SUPPORTED] What dataset statistics does the context file provide?
+[SUPPORTED] What coverage limitations should I mention?
+[RISKY] What does the context file say about missing or incomplete data?
+[SUPPORTED] Which release/version/date is this based on?
+[SUPPORTED] Does the file include prompt examples or usage guidance?
+[RISKY] What should I avoid asking the LLM based only on this file?
+
+=== RUBRIC-BASED PROMPT RISKS ===
+
+Issue: missing_data_guidance_weak
+Rubric category: Missing Data Documentation
+Hallucination risk: The file does not clearly explain missing or incomplete data, so the LLM may invent causes.
+Suggested fix: Ask the LLM to only state missing-data warnings that are explicitly in the file.
+
+Issue: unsupported_questions_not_explained
+Rubric category: Unsupported Questions
+Hallucination risk: The file may not clearly say what the LLM should avoid answering.
+Suggested fix: Tell the LLM to say 'not stated in the context file' when the file does not provide the answer.
+
+
+=== SAFER REWRITTEN PROMPTS ===
+
+q1_schema: Using only this context file, summarize what schema, column, field, or attribute information it provides. If something is not explained, say it is not explained in the file.
+q2_statistics: Using only this context file, list the dataset statistics it provides. Do not calculate new totals unless the file explicitly gives enough information.
+q3_coverage: Using only this context file, explain what coverage limitations are stated. Mention geography, sources, themes, or availability only if the file states them.
+q4_missing_data: Using only this context file, explain what it says about missing or incomplete data. Do not guess causes that the file does not state.
+q5_version: Before answering, identify the release, version, date, or generation time from this context file. Answer only for that stated release or date.
+q6_prompt_examples: Use this context file as reference material. Write a specific prompt that tells the LLM what information to rely on and what not to guess.
+q7_unsupported: Ask: What can this context file not support? If the file does not state something, say 'not stated in the context file' instead of guessing.
+
+=== PINPOINTED CONTEXT FILE EVIDENCE ===
+
+role: line 10: ## YOUR ROLE
+constraint: line 22: ## KEY CONSTRAINTS
+constraints: line 22: ## KEY CONSTRAINTS
+schema: line 12: data. This document contains comprehensive statistics, schema definitions, and
+schema: line 18: - Reference the schema definitions to explain data structure
+column: line 88: ## SCHEMA REFERENCE - GROUPING COLUMNS
+column: line 91: This section defines the key columns used to categorize and group data across
+columns: line 88: ## SCHEMA REFERENCE - GROUPING COLUMNS
+columns: line 91: This section defines the key columns used to categorize and group data across
+statistics: line 12: data. This document contains comprehensive statistics, schema definitions, and
+statistics: line 19: - Use the statistics sections to support your analysis
+total: line 233: **Total Features**: 445,932,761 addresses
+total: line 237: - Total Change: 0.00%
+features: line 72: - 1.43B features
+features: line 79: - 763.87M features
+coverage: line 16: - Answer user questions about data distributions, coverage, and characteristics
+coverage: line 47: - Coverage varies significantly by country
+country: line 47: - Coverage varies significantly by country
+country: line 67: - Nine administrative levels: country → dependency → region → county → localadmin → locality → macrohood → neighborhood → microhood
+countries: line 137: Notes: Optional; not all countries use three address levels
+countries: line 157: **place_countries**
+release: line 4: Release Version: 2025-09-24.0
+release: line 23: - Data is from release 2025-09-24.0 only
+version: line 4: Release Version: 2025-09-24.0
+generated: line 6: Generated: 2025-11-27 17:19:37
+example: line 119: Examples: US, BR, IN, CN, GB
+example: line 125: Examples: California, Oaxaca, Ontario, Queensland
+examples: line 119: Examples: US, BR, IN, CN, GB
+examples: line 125: Examples: California, Oaxaca, Ontario, Queensland
+prompt: line 675: <<<PROMPTS_START>>>
+
+=== PROMPT READINESS SCORE ===
+
+Prompt Readiness Score: 74/100
+
+Score deductions:
+-10 points: q4_missing_data was marked RISKY
+-10 points: q7_unsupported was marked RISKY
+-6 points: rubric_prompt_risks was marked ISSUES
+
+=== SUMMARY ===
+This context file is usable, but prompts need guardrails.
