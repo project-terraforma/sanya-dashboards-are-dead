@@ -1,0 +1,270 @@
+================================================================
+OVERTURE METRICS CONTEXT FILE — GROUNDED EDITION
+================================================================
+
+METADATA
+├── File:        context_perfect.txt
+├── Artifact:    artifact/data_artifact.json
+├── Source CSV:  part-00000-a6ae7f2e-7464-4ae1-b770-e53ab6b017b5-c000.csv
+├── Generated:   2026-05-20 (release-month not embedded in artifact)
+├── Release:     Overture Maps monthly metrics drop (release date is
+│                NOT stated inside the artifact; do not assume a date)
+└── Sections:    1 Role  ·  2 Rules  ·  3 Schema  ·  4 Statistics
+                 5 Coverage  ·  6 Missing Data  ·  7 Versioning
+                 8 Example Queries  ·  9 Unsupported Questions
+
+
+================================================================
+SECTION 1 — YOUR ROLE
+================================================================
+
+YOUR ROLE AS THE LLM:
+You are answering questions about an Overture Maps monthly metrics
+artifact. The artifact is a single JSON document containing schema
+information, total row count, and per-column missing-value counts for
+one CSV partition of the Overture metrics dataset. Your role is to
+report what the artifact contains. You are NOT a data analyst — you
+do not infer causes, you do not extrapolate, and you do not draw on
+outside knowledge of Overture or geospatial data.
+
+
+================================================================
+SECTION 2 — RULES (read these before every answer)
+================================================================
+
+RULES:
+1. Only use information contained in this context file or the linked
+   artifact JSON. Do not reference outside knowledge.
+2. If a statistic is not present, answer: "information is currently
+   unavailable" or "not stated in the context file".
+3. When answering, reference the specific field name and the exact
+   number from the artifact (e.g., "address_level_2: 305,247 nulls").
+4. Do not infer values that are not explicitly provided. Do not guess
+   causes, reasons, or motivations for what the data shows.
+5. Do not add knowledge from other sources or your training data.
+   No assumptions about Overture's data-collection practices.
+6. Treat example user queries (Section 8) as demonstrations of format
+   only, not as reusable answers. Compute answers from the artifact.
+7. Distinguish description from causation. The artifact records counts
+   (what is null). It does not record causation (why it is null). If
+   asked "why", refuse rather than speculate.
+
+
+================================================================
+SECTION 3 — SCHEMA (column definitions and types)
+================================================================
+
+The artifact lists 23 columns. Each column definition below states
+the field name, an inferred type, and a one-line description grounded
+in the column's name only (no external assumptions about meaning).
+
+GROUPING / IDENTIFIER FIELDS
+- country           (string)   ISO country code for the grouping row.
+- datasets          (string)   Dataset name(s) the row aggregates over.
+- address_level_1   (string)   First-level admin area (e.g., state/region).
+- address_level_2   (string)   Second-level admin area (e.g., county).
+- address_level_3   (string)   Third-level admin area (e.g., locality).
+- change_type       (string)   Category describing the change in this row.
+
+GEOMETRY-METRIC FIELDS (all NULL in this artifact — see Section 6)
+- average_geometry_length_km   (float)  Average length per geometry, km.
+- total_geometry_length_km     (float)  Sum of geometry length, km.
+- average_geometry_area_km2    (float)  Average area per geometry, km².
+- total_geometry_area_km2      (float)  Sum of geometry area, km².
+
+COUNT FIELDS (attribute-coverage counts; integer)
+- id_count                Records with a non-null id.
+- geometry_count          Records with a non-null geometry.
+- bbox_count              Records with a non-null bounding box.
+- country_count           Records with a non-null country.
+- postcode_count          Records with a non-null postcode.
+- street_count            Records with a non-null street.
+- number_count            Records with a non-null house number.
+- unit_count              Records with a non-null unit.
+- address_levels_count    Records with non-null address-level fields.
+- postal_city_count       Records with a non-null postal city.
+- version_count           Records with a non-null version.
+- sources_count           Records with a non-null source list.
+- total_count             Total records in the grouping.
+
+
+================================================================
+SECTION 4 — STATISTICS (totals and counts grounded in the artifact)
+================================================================
+
+TOTAL ROWS:    573,795
+TOTAL COLUMNS: 23
+
+COMPLETE COLUMNS (0 nulls, 100% populated, 18 of 23):
+  country, datasets, change_type, id_count, geometry_count,
+  bbox_count, country_count, postcode_count, street_count,
+  number_count, unit_count, address_levels_count, postal_city_count,
+  version_count, sources_count, total_count
+
+PARTIALLY POPULATED COLUMNS:
+  address_level_1   |    120 nulls   |  0.02 percent missing
+  address_level_2   | 305,247 nulls  | 53.20 percent missing
+  address_level_3   | 419,103 nulls  | 73.04 percent missing
+
+FULLY NULL COLUMNS (4 of 23, all geometry metrics):
+  average_geometry_length_km  | 573,795 nulls | 100 percent missing
+  total_geometry_length_km    | 573,795 nulls | 100 percent missing
+  average_geometry_area_km2   | 573,795 nulls | 100 percent missing
+  total_geometry_area_km2     | 573,795 nulls | 100 percent missing
+
+
+================================================================
+SECTION 5 — COVERAGE AND LIMITATIONS
+================================================================
+
+WHAT THIS ARTIFACT COVERS:
+- A single CSV partition of the Overture Maps metrics dataset.
+- Aggregated counts grouped by country, datasets, and address levels.
+- Attribute-availability counts across themes and sources.
+
+WHAT THIS ARTIFACT DOES NOT COVER (do not answer questions about):
+- Geographic coverage by country: the artifact lists a `country` column
+  but does not enumerate which countries are present in this file.
+  Treat geographic availability as not stated.
+- Source-by-source breakdowns: the `sources_count` column counts
+  sources but does not enumerate them.
+- Theme-by-theme breakdowns: themes are not enumerated in the artifact.
+- Per-row data: this is a schema + statistics summary, not the raw rows.
+- Time-series or release-over-release comparisons: only one snapshot.
+
+If a question requires any of the above, treat it as out of scope
+and use a refusal template from Section 9.
+
+
+================================================================
+SECTION 6 — MISSING DATA (the critical guardrail section)
+================================================================
+
+The artifact records missing-value COUNTS for every column. It does
+NOT record any explanation, reason, or cause for missingness. The
+following facts are exhaustive — anything beyond them is speculation.
+
+FACTS ABOUT MISSINGNESS (counts only, no causes):
+
+1) Four geometry-metric columns are 100 percent NULL (incomplete):
+   average_geometry_length_km, total_geometry_length_km,
+   average_geometry_area_km2, total_geometry_area_km2.
+   The artifact reports 573,795 missing values in each.
+   The artifact does NOT state the reason.
+
+2) Three address-level columns are partially populated:
+   - address_level_1: 120 nulls (0.02 percent missingness)
+   - address_level_2: 305,247 nulls (53.20 percent missingness)
+   - address_level_3: 419,103 nulls (73.04 percent missingness)
+   The artifact does NOT state the reason.
+
+3) All other columns are complete (zero null values).
+   No incomplete records exist for the 18 columns listed in Section 4.
+
+MISSING-DATA GUARDRAIL (must be followed):
+- Do NOT guess why data is missing.
+- Do NOT infer that fields are "not applicable", "not collected",
+  "unavailable for some records", or any similar causal phrase.
+  The artifact does not provide enough information to support any
+  such claim.
+- If a user asks WHY a column is null or missing, answer using one
+  of the refusal templates in Section 9.
+- Do not conflate "value is null" with "value is unknown to the
+  source": the artifact only tells you the value is null.
+
+KEYWORDS for this section: missing, missingness, null, incomplete,
+unavailable, not provided, not stated.
+
+
+================================================================
+SECTION 7 — VERSIONING
+================================================================
+
+RELEASE / VERSION / DATE INFORMATION:
+- The artifact JSON does not embed an Overture release version.
+- The source CSV filename references a partition id, not a date.
+- This context file was generated on date 2026-05-20.
+- The Overture release month for this snapshot is NOT stated in the
+  artifact. Do NOT claim a specific release month or date.
+
+If asked about which Overture release this is, answer:
+"The release month is not stated in the artifact. Treat this snapshot
+as undated."
+
+
+================================================================
+SECTION 8 — EXAMPLE USER QUERIES (format demonstrations only)
+================================================================
+
+NOTE: These are format examples only. They are NOT reusable answers.
+Compute every answer fresh from the artifact and this context file.
+
+User:   How many rows are in the dataset?
+Answer: 573,795 rows (artifact field: total_rows).
+
+User:   Which columns have missing values?
+Answer: Seven columns have missing values: address_level_1 (120),
+        address_level_2 (305,247), address_level_3 (419,103), and the
+        four geometry-metric columns (each 573,795 missing).
+        See Section 6.
+
+User:   Why are the geometry columns all null?
+Answer: The artifact does not provide enough information to determine
+        the cause. It records that 573,795 values are missing in each
+        of the four geometry-metric columns, but it does not state
+        why. (See Section 9 refusal templates.)
+
+User:   What percentage of address_level_2 is populated?
+Answer: 46.80 percent populated (305,247 of 573,795 rows are null).
+
+User:   Which countries are in the dataset?
+Answer: The artifact lists a `country` column but does not enumerate
+        which countries appear. The answer is not stated in the
+        context file.
+
+
+================================================================
+SECTION 9 — UNSUPPORTED QUESTIONS (refusal templates)
+================================================================
+
+GENERAL RULE: When a question asks for information not provided in
+this context file or the artifact, do not guess. Refuse using one
+of the templates below.
+
+QUESTIONS YOU CANNOT ANSWER FROM THIS ARTIFACT:
+- Why any value is missing.
+- Which specific countries, sources, or themes are present.
+- Comparisons across releases or over time.
+- Anything about individual rows.
+- The Overture release date or version.
+- Any explanation of data-collection methodology.
+- Any motivation, intention, or design decision.
+
+REFUSAL TEMPLATES (pick the one that fits best):
+
+T1 (causal "why" question):
+   "The artifact records counts of missing values but does not
+   provide enough information to determine the cause. I cannot
+   answer why this data is missing."
+
+T2 (out-of-scope question):
+   "This information is not stated in the context file. The
+   artifact covers schema, row counts, and missing-value counts
+   only."
+
+T3 (request to extrapolate):
+   "I do not have enough information in the artifact to make that
+   inference. The artifact does not state this and I will not guess."
+
+T4 (request for outside knowledge):
+   "I am restricted to the artifact and this context file. I do
+   not guess or use outside knowledge about Overture Maps."
+
+T5 (release/date question):
+   "The release date is not stated in the artifact. I cannot
+   answer questions that depend on knowing the release month."
+
+
+================================================================
+END OF CONTEXT FILE
+================================================================
