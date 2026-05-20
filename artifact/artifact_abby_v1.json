@@ -1,0 +1,118 @@
+{
+  "version": "v1",
+  "author": "abby",
+  "generated": "2026-04-27",
+  "description": "Question-scoped artifact for Overture release metrics. Contains only the slices needed to answer the 10 benchmark questions in questions/bench_abby_v1.json.",
+  "instructions": [
+    "Only answer using data explicitly present in this file.",
+    "If a question requires a value not present here, say so and refuse to estimate.",
+    "If a field tracks presence/population counts (not actual values), do not compute averages or distributions from it.",
+    "Releases are listed in chronological order. The final entry is the latest release.",
+    "Approximations are acceptable when a question explicitly asks for a rough estimate."
+  ],
+  "release_index": {
+    "all_releases": [
+      "2025-01-22.0",
+      "2025-02-19.0",
+      "2025-03-19.1",
+      "2025-04-23.0",
+      "2025-05-21.0",
+      "2025-06-25.0",
+      "2025-07-23.0",
+      "2025-08-20.1",
+      "2025-09-24.0"
+    ],
+    "latest": "2025-09-24.0"
+  },
+  "theme_type_reference": {
+    "description": "7 themes, 15 types total.",
+    "themes": [
+      {"theme": "addresses", "type": "address"},
+      {"theme": "buildings", "type": "building"},
+      {"theme": "buildings", "type": "building_part"},
+      {"theme": "base", "type": "bathymetry"},
+      {"theme": "base", "type": "infrastructure"},
+      {"theme": "base", "type": "land"},
+      {"theme": "base", "type": "land_cover"},
+      {"theme": "base", "type": "land_use"},
+      {"theme": "base", "type": "water"},
+      {"theme": "divisions", "type": "division"},
+      {"theme": "divisions", "type": "division_area"},
+      {"theme": "divisions", "type": "division_boundary"},
+      {"theme": "places", "type": "place"},
+      {"theme": "transportation", "type": "connector"},
+      {"theme": "transportation", "type": "segment"}
+    ],
+    "no_class_breakdown": [
+      "transportation/connector",
+      "buildings/building_part",
+      "base/bathymetry",
+      "base/land_cover"
+    ]
+  },
+  "changelog_stats": [
+    {"theme": "base", "type": "water", "release": "2025-01-22.0", "total_current": 52839756, "added": 152164, "removed": 54984, "data_changed": 87, "unchanged": 52687505},
+    {"theme": "base", "type": "water", "release": "2025-02-19.0", "total_current": 54796351, "added": 54796351, "removed": 52839756, "data_changed": 0, "unchanged": 0, "note": "Early release with no baseline diff; added/removed reflect full snapshot replacement, not real growth."},
+    {"theme": "buildings", "type": "building", "release": "2025-03-19.1", "total_current": 2629324413, "added": 20895759, "removed": 9188886, "data_changed": 10104299, "unchanged": 2598324355},
+    {"theme": "addresses", "type": "address", "release": "2025-08-20.1", "total_current": 446544475, "added": 0, "removed": 0, "data_changed": 0, "unchanged": 446544475},
+    {"theme": "base", "type": "bathymetry", "release": "2025-08-20.1", "total_current": 59963, "added": 0, "removed": 0, "data_changed": 0, "unchanged": 59963},
+    {"theme": "base", "type": "infrastructure", "release": "2025-08-20.1", "total_current": 137307251, "added": 782830, "removed": 52693, "data_changed": 2045217, "unchanged": 134479204},
+    {"theme": "base", "type": "land", "release": "2025-08-20.1", "total_current": 67999352, "added": 286568, "removed": 20161, "data_changed": 1109867, "unchanged": 66602917},
+    {"theme": "base", "type": "land_cover", "release": "2025-08-20.1", "total_current": 123302114, "added": 0, "removed": 0, "data_changed": 0, "unchanged": 123302114},
+    {"theme": "base", "type": "land_use", "release": "2025-08-20.1", "total_current": 51237224, "added": 223180, "removed": 30968, "data_changed": 193612, "unchanged": 50820432},
+    {"theme": "base", "type": "water", "release": "2025-08-20.1", "total_current": 60856842, "added": 435442, "removed": 109446, "data_changed": 147340, "unchanged": 60274060},
+    {"theme": "buildings", "type": "building", "release": "2025-08-20.1", "total_current": 2539170484, "added": 25, "removed": 25, "data_changed": 720057849, "unchanged": 1819112610},
+    {"theme": "divisions", "type": "division", "release": "2025-08-20.1", "total_current": 4426044, "added": 0, "removed": 0, "data_changed": 0, "unchanged": 4426044},
+    {"theme": "divisions", "type": "division_area", "release": "2025-08-20.1", "total_current": 1035749, "added": 0, "removed": 0, "data_changed": 0, "unchanged": 1035749},
+    {"theme": "divisions", "type": "division_boundary", "release": "2025-08-20.1", "total_current": 87375, "added": 0, "removed": 0, "data_changed": 0, "unchanged": 87375},
+    {"theme": "places", "type": "place", "release": "2025-08-20.1", "total_current": 65342823, "added": 0, "removed": 0, "data_changed": 0, "unchanged": 65342823},
+    {"theme": "transportation", "type": "connector", "release": "2025-08-20.1", "total_current": 383075438, "added": 0, "removed": 0, "data_changed": 0, "unchanged": 383075438},
+    {"theme": "transportation", "type": "segment", "release": "2025-08-20.1", "total_current": 327025730, "added": 0, "removed": 0, "data_changed": 0, "unchanged": 327025730},
+    {"theme": "addresses", "type": "address", "release": "2025-09-24.0", "total_current": 446544475, "added": 0, "removed": 0, "data_changed": 0, "unchanged": 446544475},
+    {"theme": "base", "type": "bathymetry", "release": "2025-09-24.0", "total_current": 59963, "added": 0, "removed": 0, "data_changed": 0, "unchanged": 59963},
+    {"theme": "base", "type": "infrastructure", "release": "2025-09-24.0", "total_current": 138675066, "added": 1501897, "removed": 134082, "data_changed": 1421409, "unchanged": 135751760},
+    {"theme": "base", "type": "land", "release": "2025-09-24.0", "total_current": 68572261, "added": 663913, "removed": 91004, "data_changed": 211968, "unchanged": 67696380},
+    {"theme": "base", "type": "land_cover", "release": "2025-09-24.0", "total_current": 123302114, "added": 0, "removed": 0, "data_changed": 0, "unchanged": 123302114},
+    {"theme": "base", "type": "land_use", "release": "2025-09-24.0", "total_current": 51554492, "added": 385095, "removed": 67827, "data_changed": 321020, "unchanged": 50848377},
+    {"theme": "base", "type": "water", "release": "2025-09-24.0", "total_current": 61453539, "added": 639265, "removed": 42568, "data_changed": 227724, "unchanged": 60586550},
+    {"theme": "buildings", "type": "building", "release": "2025-09-24.0", "total_current": 2534851890, "added": 4479724, "removed": 8798318, "data_changed": 3076432, "unchanged": 2527295734},
+    {"theme": "divisions", "type": "division", "release": "2025-09-24.0", "total_current": 4453656, "added": 39338, "removed": 11726, "data_changed": 119975, "unchanged": 4294343},
+    {"theme": "divisions", "type": "division_area", "release": "2025-09-24.0", "total_current": 1047731, "added": 17043, "removed": 5061, "data_changed": 49376, "unchanged": 981312},
+    {"theme": "divisions", "type": "division_boundary", "release": "2025-09-24.0", "total_current": 87646, "added": 309, "removed": 38, "data_changed": 2804, "unchanged": 84533},
+    {"theme": "places", "type": "place", "release": "2025-09-24.0", "total_current": 71624529, "added": 9876570, "removed": 3594864, "data_changed": 61747959, "unchanged": 0},
+    {"theme": "transportation", "type": "connector", "release": "2025-09-24.0", "total_current": 385487757, "added": 2797905, "removed": 385586, "data_changed": 954440, "unchanged": 381735412},
+    {"theme": "transportation", "type": "segment", "release": "2025-09-24.0", "total_current": 328539289, "added": 2259885, "removed": 746326, "data_changed": 5192746, "unchanged": 321086658}
+  ],
+  "field_coverage_stats": {
+    "description": "Counts represent number of records with that field populated (not the field's value).",
+    "entries": [
+      {
+        "theme": "buildings",
+        "type": "building",
+        "release": "2025-09-24.0",
+        "fields": {
+          "height": 200682729,
+          "phone_number": null,
+          "total_count": 2534851890
+        }
+      },
+      {
+        "theme": "places",
+        "type": "place",
+        "release": "2025-09-24.0",
+        "fields": {
+          "phone_number": 61370591,
+          "total_count": 71624529,
+          "_note": "Source CSV labels this field 'phones'; aliased here as 'phone_number' for Q10 alignment."
+        }
+      }
+    ]
+  },
+  "class_distribution_stats": {
+    "description": "Q6: addresses/address country-level record counts for last 2 releases.",
+    "entries": [
+      {"theme": "addresses", "type": "address", "release": "2025-08-20.1", "by_country": {"US": 112435837, "BR": 89899299, "MX": 28407305, "FR": 26068954, "IT": 25949445, "JP": 19576027, "CA": 17062677, "DE": 15847833, "AU": 15721026, "ES": 13188482, "NL": 9869902, "TW": 9505574, "CO": 7786046, "PL": 7669619, "BE": 6889452, "PT": 5676331, "CL": 4219970, "DK": 3930542, "FI": 3748102, "CH": 3257188, "CZ": 2994390, "NO": 2571756, "AT": 2492155, "NZ": 2381370, "EE": 2215931, "HR": 1674311, "SK": 1630271, "UY": 1059695, "LT": 1036251, "SI": 576642, "LV": 544380, "HK": 182155, "LU": 164415, "SG": 141116, "IS": 136857, "GL": 20293, "LI": 12876}},
+      {"theme": "addresses", "type": "address", "release": "2025-09-24.0", "by_country": {"US": 112435837, "BR": 89899299, "MX": 28407305, "FR": 26068954, "IT": 25949445, "JP": 19576027, "CA": 17062677, "DE": 15847833, "AU": 15721026, "ES": 13188482, "NL": 9869902, "TW": 9505574, "CO": 7786046, "PL": 7669619, "BE": 6889452, "PT": 5676331, "CL": 4219970, "DK": 3930542, "FI": 3748102, "CH": 3257188, "CZ": 2994390, "NO": 2571756, "AT": 2492155, "NZ": 2381370, "EE": 2215931, "HR": 1674311, "SK": 1630271, "UY": 1059695, "LT": 1036251, "SI": 576642, "LV": 544380, "HK": 182155, "LU": 164415, "SG": 141116, "IS": 136857, "GL": 20293, "LI": 12876}}
+    ]
+  }
+}
