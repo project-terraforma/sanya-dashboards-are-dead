@@ -1,0 +1,53 @@
+{
+  "llm": "claude",
+  "model": "claude-opus-4-7",
+  "timestamp": "20260520_164533",
+  "artifact_path": "artifact/artifact_abby_v1.txt",
+  "benchmark_path": "questions/bench_abby_v1.json",
+  "results": [
+    {
+      "id": "Q1",
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CbEiCHfUhwb52g1zgsAk5'}"
+    },
+    {
+      "id": "Q2",
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CbEiCJGCRcVUTKdGzaafB'}"
+    },
+    {
+      "id": "Q3",
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CbEiCKDzUVyciL43Vumfq'}"
+    },
+    {
+      "id": "Q4",
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CbEiCL56FLXFq5nTSW81f'}"
+    },
+    {
+      "id": "Q5a",
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CbEiCM3Nm87v2nwYucDYb'}"
+    },
+    {
+      "id": "Q5b",
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CbEiCMeLjY6jcmBMvuyCp'}"
+    },
+    {
+      "id": "Q5c",
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CbEiCNFJadUtoj3nmcNpy'}"
+    },
+    {
+      "id": "Q6",
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CbEiCNsGLGCFM7xP9djQ7'}"
+    },
+    {
+      "id": "Q8",
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CbEiCPZS7BoB2mHiTPZG4'}"
+    },
+    {
+      "id": "Q9",
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CbEiCQBtRqmamFvKBc2cS'}"
+    },
+    {
+      "id": "Q10",
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CbEiCRjQkxXZJZ7HgZMjB'}"
+    }
+  ]
+}

@@ -314,6 +314,158 @@ def plot_reliability_heatmap(parsed):
     return out
 
 
+# ---------- 5. Per-LLM accuracy across Claude / Gemini / OpenAI ----------
+def _latest_scored(llm: str) -> Path | None:
+    d = ROOT / "results" / "scored" / llm
+    if not d.exists():
+        return None
+    runs = sorted(d.glob("run_*.json"))
+    return runs[-1] if runs else None
+
+
+def _accuracy_from_run(run: dict, variant: str | None = None) -> tuple[int, int]:
+    """Returns (correct_count, total_scored). variant=None for single-answer
+    runs, or 'sysinstr'/'inline' for Gemini's two-variant rows."""
+    correct = total = 0
+    for row in run["results"]:
+        if "error" in row or not row.get("scored", True):
+            continue
+        score_key = "score" if variant is None else f"score_{variant}"
+        if score_key not in row:
+            continue
+        total += 1
+        if row[score_key].get("correct") == 1:
+            correct += 1
+    return correct, total
+
+
+def plot_llm_accuracy():
+    """Bar chart: % correct per LLM. Gemini uses the better-performing
+    variant so the comparison is apples-to-apples (best-effort prompt per
+    model). Self-judging caveat for OpenAI is noted in the subtitle."""
+    bars = []
+    for llm in ("claude", "gemini", "openai"):
+        path = _latest_scored(llm)
+        if not path:
+            continue
+        run = json.loads(path.read_text())
+        if llm == "gemini":
+            csi, tsi = _accuracy_from_run(run, "sysinstr")
+            cin, tin = _accuracy_from_run(run, "inline")
+            # use the better variant for the headline comparison
+            if tsi and tin:
+                acc_si = csi / tsi
+                acc_in = cin / tin
+                if acc_si >= acc_in:
+                    bars.append(("Gemini\n(sysinstr)", csi, tsi))
+                else:
+                    bars.append(("Gemini\n(inline)", cin, tin))
+        else:
+            c, t = _accuracy_from_run(run)
+            label = {"claude": "Claude", "openai": "OpenAI"}[llm]
+            bars.append((label, c, t))
+
+    if not bars:
+        print("[skip] plot_llm_accuracy: no scored runs found")
+        return None
+
+    labels = [b[0] for b in bars]
+    pct = [100 * b[1] / b[2] if b[2] else 0 for b in bars]
+    counts = [(b[1], b[2]) for b in bars]
+
+    colors = [PALETTE["good"] if p >= 80 else
+              PALETTE["warn"] if p >= 50 else PALETTE["accent"]
+              for p in pct]
+
+    fig, ax = plt.subplots(figsize=(9, 5.5))
+    x = np.arange(len(labels))
+    ax.bar(x, pct, color=colors, edgecolor="white", width=0.55)
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, fontsize=11)
+    ax.set_ylim(0, 110)
+    ax.set_ylabel("Accuracy (% correct)")
+    ax.set_title("Benchmark accuracy by LLM", loc="left", pad=14)
+    ax.text(0, 1.02,
+            "Judge: GPT-4o · OpenAI score is partially self-judged",
+            transform=ax.transAxes, fontsize=9, color=PALETTE["muted"],
+            style="italic")
+
+    for xi, (p, (c, t)) in zip(x, zip(pct, counts)):
+        ax.text(xi, p + 2, f"{p:.0f}%", ha="center", fontsize=12,
+                fontweight="bold", color=PALETTE["ink"])
+        ax.text(xi, -6, f"{c}/{t}", ha="center", fontsize=9,
+                color=PALETTE["muted"])
+
+    fig.tight_layout()
+    out = VIZ / "llm_accuracy.png"
+    fig.savefig(out, dpi=160, bbox_inches="tight")
+    plt.close(fig)
+    return out
+
+
+# ---------- 6. Gemini A/B: sysinstr vs inline hallucination rate ----------
+def _hallucination_from_run(run: dict, variant: str) -> tuple[int, int]:
+    halluc = total = 0
+    for row in run["results"]:
+        if "error" in row or not row.get("scored", True):
+            continue
+        score_key = f"score_{variant}"
+        if score_key not in row:
+            continue
+        total += 1
+        if row[score_key].get("hallucinated") == 1:
+            halluc += 1
+    return halluc, total
+
+
+def plot_gemini_hallucination_ab():
+    path = _latest_scored("gemini")
+    if not path:
+        print("[skip] plot_gemini_hallucination_ab: no scored gemini run")
+        return None
+    run = json.loads(path.read_text())
+
+    h_si, t_si = _hallucination_from_run(run, "sysinstr")
+    h_in, t_in = _hallucination_from_run(run, "inline")
+    pct_si = 100 * h_si / t_si if t_si else 0
+    pct_in = 100 * h_in / t_in if t_in else 0
+
+    labels = ["system_instruction", "inline prompt"]
+    pcts = [pct_si, pct_in]
+    counts = [(h_si, t_si), (h_in, t_in)]
+    # red bias toward worse (higher hallucination) variant
+    colors = [PALETTE["accent"] if p == max(pcts) and p > 0 else PALETTE["primary"]
+              for p in pcts]
+
+    fig, ax = plt.subplots(figsize=(8, 5.5))
+    x = np.arange(len(labels))
+    ax.bar(x, pcts, color=colors, edgecolor="white", width=0.5)
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, fontsize=11)
+    ax.set_ylim(0, max(pcts + [10]) * 1.3)
+    ax.set_ylabel("Hallucination rate (% of scored answers)")
+    ax.set_title("Gemini A/B  ·  system_instruction vs inline prompt",
+                 loc="left", pad=14)
+    ax.text(0, 1.02,
+            "Lower is better · judged by GPT-4o against the source artifact",
+            transform=ax.transAxes, fontsize=9, color=PALETTE["muted"],
+            style="italic")
+
+    for xi, (p, (h, t)) in zip(x, zip(pcts, counts)):
+        ax.text(xi, p + (max(pcts + [10]) * 0.04),
+                f"{p:.0f}%", ha="center", fontsize=14,
+                fontweight="bold", color=PALETTE["ink"])
+        ax.text(xi, -max(pcts + [10]) * 0.07,
+                f"{h}/{t} hallucinated", ha="center", fontsize=9,
+                color=PALETTE["muted"])
+
+    fig.tight_layout()
+    out = VIZ / "gemini_hallucination_ab.png"
+    fig.savefig(out, dpi=160, bbox_inches="tight")
+    plt.close(fig)
+    return out
+
+
 def main():
     outputs = []
     outputs.append(plot_missing_values())
@@ -321,6 +473,12 @@ def main():
     parsed = parse_reports()
     outputs.append(plot_context_scores(parsed))
     outputs.append(plot_reliability_heatmap(parsed))
+    acc = plot_llm_accuracy()
+    if acc:
+        outputs.append(acc)
+    halluc = plot_gemini_hallucination_ab()
+    if halluc:
+        outputs.append(halluc)
     for p in outputs:
         print(f"wrote {p.relative_to(ROOT)}")
 

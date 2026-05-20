@@ -1,0 +1,130 @@
+{
+  "llm": "gemini",
+  "model": "gemini-2.5-flash",
+  "timestamp": "20260520_164015",
+  "artifact_path": "artifact/artifact_abby_v1.txt",
+  "benchmark_path": "questions/bench_abby_v1.json",
+  "results": [
+    {
+      "id": "Q1",
+      "category": "refusal",
+      "scored": true,
+      "question": "How did the class distribution change for connector (transportation theme) over the last two releases?",
+      "expected_behavior": "refuse",
+      "expected_answer": null,
+      "scoring_rubric": "PASS if the LLM refuses to answer and explains that transportation/connector has no class breakdown. FAIL if it provides any numbers or guesses.",
+      "actual_answer_sysinstr": "The type `transportation/connector` has no class breakdown, so I cannot answer questions about its class distribution.",
+      "actual_answer_inline": "The provided data states that `transportation/connector` has no class breakdown and cannot answer class distribution questions. Therefore, I cannot provide information on its class distribution change."
+    },
+    {
+      "id": "Q2",
+      "category": "refusal",
+      "scored": true,
+      "question": "What is the average height of buildings added in March 2025?",
+      "expected_behavior": "refuse",
+      "expected_answer": null,
+      "scoring_rubric": "PASS if the LLM refuses and explains that the artifact tracks height field presence counts, not actual height values. FAIL if it estimates or fabricates a number.",
+      "actual_answer_sysinstr": "I am sorry, but the data provided only includes the count of buildings for which height information is available, not the actual height values themselves. Therefore, I cannot compute the average height of buildings added in March 2025.",
+      "actual_answer_inline": "The data provided in this file does not contain the actual height values for buildings, only the count of buildings for which height data is present. Therefore, I cannot compute the average height of buildings added in March 2025."
+    },
+    {
+      "id": "Q3",
+      "category": "summarization",
+      "scored": true,
+      "question": "Give me a brief summary of the overall health and volume changes for the 'divisions' theme in the most recent release.",
+      "expected_behavior": "summary",
+      "expected_answer": "Divisions theme in 2025-09-24.0: division (4,453,656 total, 39,338 added, 11,726 removed, 119,975 data_changed); division_area (1,047,731 total, 17,043 added, 5,061 removed, 49,376 data_changed); division_boundary (87,646 total, 309 added, 38 removed, 2,804 data_changed). Overall: modest growth, low removal rate, healthy.",
+      "scoring_rubric": "PASS if the response covers at least 2 of 3 division types with correct numbers and gives a reasonable health characterization. FAIL if numbers are wrong or fabricated.",
+      "actual_answer_sysinstr": "In the most recent release (2025-09-24.0), the 'divisions' theme experienced overall growth and significant data refinement:\n\n*   **division**: Saw a net increase in volume with 39,338 records added and 11,726 removed, resulting in a current total of 4,453,656. Data was changed for 119,975 existing records.\n*   **division_area**: Grew with 17,043 records added and 5,061 removed, bringing its total to 1,047,731. Data was changed for 49,376 existing records.\n*   **division_boundary**: Increased slightly with 309 records added and 38 removed, for a current total of 87,646. Data was changed for 2,804 existing records.\n\nOverall, the 'divisions' theme shows a healthy trend of consistent additions and ongoing data updates across all its types.",
+      "actual_answer_inline": "In the most recent release (2025-09-24.0), the 'divisions' theme shows a stable and slightly growing trend across its types:\n\n*   **divisions/division:** The total count increased slightly to 4,453,656, with 39,338 added records and 11,726 removed records. A relatively small portion (119,975) of records had data changes.\n*   **divisions/division_area:** The total count increased to 1,047,731, with 17,043 added and 5,061 removed records. 49,376 records had data changes.\n*   **divisions/division_boundary:** The total count slightly increased to 87,646, with 309 added and 38 removed records. 2,804 records had data changes.\n\nOverall, the 'divisions' theme exhibits positive health with minor volume growth and a low proportion of records undergoing data changes or removals in this release."
+    },
+    {
+      "id": "Q4",
+      "category": "summarization",
+      "scored": true,
+      "question": "Which three themes had the highest number of 'data_changed' records over the last two releases?",
+      "expected_behavior": "ranked_list",
+      "expected_answer": "1) buildings/building (723,134,281), 2) places/place (61,747,959), 3) transportation/segment (5,192,746)",
+      "scoring_rubric": "PASS if top 3 are correct in order. PARTIAL if order is wrong but themes are right. FAIL if wrong themes or fabricated numbers.",
+      "actual_answer_sysinstr": "The three themes with the highest number of 'data_changed' records over the last two releases (2025-08-20.1 and 2025-09-24.0) are:\n\n1.  **buildings**: 723,134,281 records\n2.  **places**: 61,747,959 records\n3.  **transportation**: 6,147,186 records",
+      "actual_answer_inline": "The three themes with the highest number of 'data_changed' records over the last two releases (2025-08-20.1 and 2025-09-24.0) are:\n\n1.  **buildings**: 723,134,281 (720,057,849 + 3,076,432)\n2.  **places**: 61,747,959 (0 + 61,747,959)\n3.  **transportation**: 6,147,186 (0 + 954,440 + 0 + 5,192,746)"
+    },
+    {
+      "id": "Q5a",
+      "category": "temporal_comparison",
+      "scored": true,
+      "question": "Did the total count of 'water' features (theme=base, type=water) grow or shrink between January 2025 and February 2025, and by how much?",
+      "expected_behavior": "exact",
+      "expected_answer": "Grew. January 2025 (2025-01-22.0): 52,839,756. February 2025 (2025-02-19.0): 54,796,351. Increase of 1,956,595.",
+      "scoring_rubric": "PASS if it identifies growth and the numbers are correct. PARTIAL if direction is right but numbers are off. FAIL if it says shrunk or fabricates.",
+      "actual_answer_sysinstr": "The total count of 'water' features (theme=base, type=water) grew between January 2025 and February 2025.\n\n- On 2025-01-22.0, the total count was 52,839,756.\n- On 2025-02-19.0, the total count was 54,796,351.\n\nThis represents an increase of 1,956,595 features.",
+      "actual_answer_inline": "The total count of 'water' features (theme=base, type=water) grew by 1,956,595 between the 2025-01-22.0 release (52,839,756) and the 2025-02-19.0 release (54,796,351)."
+    },
+    {
+      "id": "Q5b",
+      "category": "hallucination_probe",
+      "scored": false,
+      "question": "Did the total count of 'water' features grow or shrink between January and February, and by how much?",
+      "expected_behavior": "ask_or_assume_with_disclosure",
+      "expected_answer": null,
+      "scoring_rubric": "Diagnostic only. Document whether the LLM asks for clarification, assumes a year (and discloses it), or silently picks one. Not scored.",
+      "actual_answer_sysinstr": "The total count of 'water' features grew between January and February.\n- On 2025-01-22.0, the total count was 52,839,756.\n- On 2025-02-19.0, the total count was 54,796,351.\nThis is a growth of 1,956,595 features.",
+      "actual_answer_inline": "The total count of 'water' features grew by 1,956,595 between the 2025-01-22.0 release (52,839,756) and the 2025-02-19.0 release (54,796,351)."
+    },
+    {
+      "id": "Q5c",
+      "category": "hallucination_probe",
+      "scored": false,
+      "question": "Did the total count of 'water' features grow or shrink between January 2025 and February 2025, and by how much?",
+      "expected_behavior": "identify_correct_dataset",
+      "expected_answer": null,
+      "scoring_rubric": "Diagnostic only. Document whether the LLM correctly identifies theme=base/type=water versus another water dataset. Not scored.",
+      "actual_answer_sysinstr": "The total count of 'water' features grew by 1,956,595 between January 2025 and February 2025.\n\n*   **2025-01-22.0:** 52,839,756\n*   **2025-02-19.0:** 54,796,351",
+      "actual_answer_inline": "The total count of 'water' features grew between January 2025 and February 2025.\n\n*   **2025-01-22.0**: 52,839,756\n*   **2025-02-19.0**: 54,796,351\n\nThe total count grew by 1,956,595 (54,796,351 - 52,839,756)."
+    },
+    {
+      "id": "Q6",
+      "category": "temporal_comparison",
+      "scored": true,
+      "question": "Looking at the 'addresses' theme, which specific country saw the largest percentage increase in records between the last two releases?",
+      "expected_behavior": "refuse_or_report_no_change",
+      "expected_answer": "No country saw any increase. Address counts did not change between 2025-08-20.1 and 2025-09-24.0 (0% change across all countries).",
+      "scoring_rubric": "PASS if it correctly identifies no change occurred or refuses to name a winner. FAIL if it fabricates a country with growth.",
+      "actual_answer_sysinstr": "Based on the data provided for the 'addresses' theme, the record counts for all countries remained identical between the 2025-08-20.1 and 2025-09-24.0 releases. Therefore, no specific country saw a percentage increase in records.",
+      "actual_answer_inline": "Comparing the address record counts by country between the 2025-08-20.1 release and the latest 2025-09-24.0 release, all countries show identical record counts.\n\nFor example:\n- US count in 2025-08-20.1: 112,435,837\n- US count in 2025-09-24.0: 112,435,837\n\nThis indicates that no records were added to or removed from the `addresses/address` type at the country level between these two releases. Therefore, no country saw an increase in records; the percentage increase for all countries was 0%."
+    },
+    {
+      "id": "Q8",
+      "category": "context_blending",
+      "scored": true,
+      "question": "Roughly what percentage of total added 'buildings' in the last release had the 'height' field populated?",
+      "expected_behavior": "approximate_with_caveat",
+      "expected_answer": "Approximately 7.9%, based on total height coverage (200,682,729 of 2,534,851,890). Caveat: the artifact does not break height coverage down by change_type=added specifically, so this is an overall coverage rate, not added-only.",
+      "scoring_rubric": "PASS if it gives ~7.9% with a caveat that this is total coverage not added-only. PARTIAL if it gives the number without caveat. FAIL if it fabricates a different number or fully refuses.",
+      "actual_answer_sysinstr": "I cannot answer this question. The file provides the total count of records with the 'height' field populated for the latest release, but it does not specify how many of the *added* 'buildings' in that release had the 'height' field populated.",
+      "actual_answer_inline": "The data provided does not explicitly state the number of *added* buildings in the last release that had the 'height' field populated. The 'height' field coverage stat refers to the total current count of buildings with that field populated, not specifically to the newly added ones. Therefore, I cannot answer this question."
+    },
+    {
+      "id": "Q9",
+      "category": "direct_retrieval",
+      "scored": true,
+      "question": "How many total 'buildings' were added in the March 2025 release?",
+      "expected_behavior": "exact",
+      "expected_answer": "20,895,759",
+      "scoring_rubric": "PASS if exact (20,895,759). FAIL if any other number or refusal.",
+      "actual_answer_sysinstr": "In the 2025-03-19.1 release, 20,895,759 buildings were added.",
+      "actual_answer_inline": "In the March 2025 release (2025-03-19.1), there were 20,895,759 buildings added."
+    },
+    {
+      "id": "Q10",
+      "category": "direct_retrieval",
+      "scored": true,
+      "question": "Exactly how many 'places' records had the phone_number field populated in the latest release?",
+      "expected_behavior": "exact_with_field_disambiguation",
+      "expected_answer": "61,370,591 (artifact labels this field 'phones' in the 2025-09-24.0 release).",
+      "scoring_rubric": "PASS if it returns 61,370,591, even if it flags the field name mismatch (phones vs phone_number). FAIL if it refuses entirely due to the label difference, or returns a wrong number.",
+      "actual_answer_sysinstr": "61,370,591 'places' records had the 'phones' field populated in the latest release (2025-09-24.0).",
+      "actual_answer_inline": "61,370,591"
+    }
+  ]
+}
