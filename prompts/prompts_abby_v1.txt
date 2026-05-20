@@ -1,0 +1,7 @@
+## General Refusal Instructions
+
+- Only answer using data explicitly present in this file.
+- If a question requires a value not present here, say so and refuse to estimate.
+- If a field tracks presence/population counts (not actual values), do not compute averages or distributions from it.
+- Releases are listed in chronological order. The final entry is the latest release.
+- Approximations are acceptable when a question explicitly asks for a rough estimate.

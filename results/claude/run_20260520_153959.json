@@ -1,0 +1,53 @@
+{
+  "llm": "claude",
+  "model": "claude-opus-4-7",
+  "timestamp": "20260520_153959",
+  "artifact_path": "artifact/artifact_abby_v1.txt",
+  "benchmark_path": "questions/bench_abby_v1.json",
+  "results": [
+    {
+      "id": "Q1",
+      "error": "Error code: 401 - {'message': 'Unauthorized', 'details': \"You are attempting to access a resource that you don't have permission to access, this could be because you have not provided an appropriate API key or are connecting to the wrong server\", 'ownership': 'This is api.letta.com, which is used to access Letta Cloud resources. If you are self hosting, you should connect to your own server, usually http://localhost:8283'}"
+    },
+    {
+      "id": "Q2",
+      "error": "Error code: 401 - {'message': 'Unauthorized', 'details': \"You are attempting to access a resource that you don't have permission to access, this could be because you have not provided an appropriate API key or are connecting to the wrong server\", 'ownership': 'This is api.letta.com, which is used to access Letta Cloud resources. If you are self hosting, you should connect to your own server, usually http://localhost:8283'}"
+    },
+    {
+      "id": "Q3",
+      "error": "Error code: 401 - {'message': 'Unauthorized', 'details': \"You are attempting to access a resource that you don't have permission to access, this could be because you have not provided an appropriate API key or are connecting to the wrong server\", 'ownership': 'This is api.letta.com, which is used to access Letta Cloud resources. If you are self hosting, you should connect to your own server, usually http://localhost:8283'}"
+    },
+    {
+      "id": "Q4",
+      "error": "Error code: 401 - {'message': 'Unauthorized', 'details': \"You are attempting to access a resource that you don't have permission to access, this could be because you have not provided an appropriate API key or are connecting to the wrong server\", 'ownership': 'This is api.letta.com, which is used to access Letta Cloud resources. If you are self hosting, you should connect to your own server, usually http://localhost:8283'}"
+    },
+    {
+      "id": "Q5a",
+      "error": "Error code: 401 - {'message': 'Unauthorized', 'details': \"You are attempting to access a resource that you don't have permission to access, this could be because you have not provided an appropriate API key or are connecting to the wrong server\", 'ownership': 'This is api.letta.com, which is used to access Letta Cloud resources. If you are self hosting, you should connect to your own server, usually http://localhost:8283'}"
+    },
+    {
+      "id": "Q5b",
+      "error": "Error code: 401 - {'message': 'Unauthorized', 'details': \"You are attempting to access a resource that you don't have permission to access, this could be because you have not provided an appropriate API key or are connecting to the wrong server\", 'ownership': 'This is api.letta.com, which is used to access Letta Cloud resources. If you are self hosting, you should connect to your own server, usually http://localhost:8283'}"
+    },
+    {
+      "id": "Q5c",
+      "error": "Error code: 401 - {'message': 'Unauthorized', 'details': \"You are attempting to access a resource that you don't have permission to access, this could be because you have not provided an appropriate API key or are connecting to the wrong server\", 'ownership': 'This is api.letta.com, which is used to access Letta Cloud resources. If you are self hosting, you should connect to your own server, usually http://localhost:8283'}"
+    },
+    {
+      "id": "Q6",
+      "error": "Error code: 401 - {'message': 'Unauthorized', 'details': \"You are attempting to access a resource that you don't have permission to access, this could be because you have not provided an appropriate API key or are connecting to the wrong server\", 'ownership': 'This is api.letta.com, which is used to access Letta Cloud resources. If you are self hosting, you should connect to your own server, usually http://localhost:8283'}"
+    },
+    {
+      "id": "Q8",
+      "error": "Error code: 401 - {'message': 'Unauthorized', 'details': \"You are attempting to access a resource that you don't have permission to access, this could be because you have not provided an appropriate API key or are connecting to the wrong server\", 'ownership': 'This is api.letta.com, which is used to access Letta Cloud resources. If you are self hosting, you should connect to your own server, usually http://localhost:8283'}"
+    },
+    {
+      "id": "Q9",
+      "error": "Error code: 401 - {'message': 'Unauthorized', 'details': \"You are attempting to access a resource that you don't have permission to access, this could be because you have not provided an appropriate API key or are connecting to the wrong server\", 'ownership': 'This is api.letta.com, which is used to access Letta Cloud resources. If you are self hosting, you should connect to your own server, usually http://localhost:8283'}"
+    },
+    {
+      "id": "Q10",
+      "error": "Error code: 401 - {'message': 'Unauthorized', 'details': \"You are attempting to access a resource that you don't have permission to access, this could be because you have not provided an appropriate API key or are connecting to the wrong server\", 'ownership': 'This is api.letta.com, which is used to access Letta Cloud resources. If you are self hosting, you should connect to your own server, usually http://localhost:8283'}"
+    }
+  ]
+}

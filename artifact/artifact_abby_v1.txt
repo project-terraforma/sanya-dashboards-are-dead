@@ -1,0 +1,179 @@
+# Overture Release Metrics — LLM Context File (v1)
+# Generated: 2026-04-27
+
+## Instructions
+- Only answer using data explicitly present in this file.
+- If a question requires a value not present here, say so and refuse to estimate.
+- If a field tracks presence/population counts (not actual values), do not compute averages or distributions from it.
+- Releases are listed in chronological order. The final entry is the latest release.
+
+## Release Index
+- 2025-01-22.0
+- 2025-02-19.0
+- 2025-03-19.1
+- 2025-04-23.0
+- 2025-05-21.0
+- 2025-06-25.0
+- 2025-07-23.0
+- 2025-08-20.1
+- 2025-09-24.0  ← latest
+
+## Theme & Type Reference
+7 themes, 15 types total.
+
+| Theme | Type |
+|-------|------|
+| addresses | address |
+| buildings | building |
+| buildings | building_part |
+| base | bathymetry |
+| base | infrastructure |
+| base | land |
+| base | land_cover |
+| base | land_use |
+| base | water |
+| divisions | division |
+| divisions | division_area |
+| divisions | division_boundary |
+| places | place |
+| transportation | connector |
+| transportation | segment |
+
+Note: The following types have NO class breakdown and cannot answer class distribution questions:
+- transportation/connector
+- buildings/building_part
+- base/bathymetry
+- base/land_cover
+
+## Changelog Stats
+Columns: theme | type | release | total_current | added | removed | data_changed | unchanged
+
+| theme | type | release | total_current | added | removed | data_changed | unchanged |
+|-------|------|---------|--------------|-------|---------|--------------|-----------|
+| base | water | 2025-01-22.0 | 52,839,756 | 152,164 | 54,984 | 87 | 52,687,505 |
+| base | water | 2025-02-19.0 | 54,796,351 | 54,796,351 | 52,839,756 | 0 | 0 |
+| buildings | building | 2025-03-19.1 | 2,629,324,413 | 20,895,759 | 9,188,886 | 10,104,299 | 2,598,324,355 |
+| addresses | address | 2025-08-20.1 | 446,544,475 | 0 | 0 | 0 | 446,544,475 |
+| base | bathymetry | 2025-08-20.1 | 59,963 | 0 | 0 | 0 | 59,963 |
+| base | infrastructure | 2025-08-20.1 | 137,307,251 | 782,830 | 52,693 | 2,045,217 | 134,479,204 |
+| base | land | 2025-08-20.1 | 67,999,352 | 286,568 | 20,161 | 1,109,867 | 66,602,917 |
+| base | land_cover | 2025-08-20.1 | 123,302,114 | 0 | 0 | 0 | 123,302,114 |
+| base | land_use | 2025-08-20.1 | 51,237,224 | 223,180 | 30,968 | 193,612 | 50,820,432 |
+| base | water | 2025-08-20.1 | 60,856,842 | 435,442 | 109,446 | 147,340 | 60,274,060 |
+| buildings | building | 2025-08-20.1 | 2,539,170,484 | 25 | 25 | 720,057,849 | 1,819,112,610 |
+| divisions | division | 2025-08-20.1 | 4,426,044 | 0 | 0 | 0 | 4,426,044 |
+| divisions | division_area | 2025-08-20.1 | 1,035,749 | 0 | 0 | 0 | 1,035,749 |
+| divisions | division_boundary | 2025-08-20.1 | 87,375 | 0 | 0 | 0 | 87,375 |
+| places | place | 2025-08-20.1 | 65,342,823 | 0 | 0 | 0 | 65,342,823 |
+| transportation | connector | 2025-08-20.1 | 383,075,438 | 0 | 0 | 0 | 383,075,438 |
+| transportation | segment | 2025-08-20.1 | 327,025,730 | 0 | 0 | 0 | 327,025,730 |
+| addresses | address | 2025-09-24.0 | 446,544,475 | 0 | 0 | 0 | 446,544,475 |
+| base | bathymetry | 2025-09-24.0 | 59,963 | 0 | 0 | 0 | 59,963 |
+| base | infrastructure | 2025-09-24.0 | 138,675,066 | 1,501,897 | 134,082 | 1,421,409 | 135,751,760 |
+| base | land | 2025-09-24.0 | 68,572,261 | 663,913 | 91,004 | 211,968 | 67,696,380 |
+| base | land_cover | 2025-09-24.0 | 123,302,114 | 0 | 0 | 0 | 123,302,114 |
+| base | land_use | 2025-09-24.0 | 51,554,492 | 385,095 | 67,827 | 321,020 | 50,848,377 |
+| base | water | 2025-09-24.0 | 61,453,539 | 639,265 | 42,568 | 227,724 | 60,586,550 |
+| buildings | building | 2025-09-24.0 | 2,534,851,890 | 4,479,724 | 8,798,318 | 3,076,432 | 2,527,295,734 |
+| divisions | division | 2025-09-24.0 | 4,453,656 | 39,338 | 11,726 | 119,975 | 4,294,343 |
+| divisions | division_area | 2025-09-24.0 | 1,047,731 | 17,043 | 5,061 | 49,376 | 981,312 |
+| divisions | division_boundary | 2025-09-24.0 | 87,646 | 309 | 38 | 2,804 | 84,533 |
+| places | place | 2025-09-24.0 | 71,624,529 | 9,876,570 | 3,594,864 | 61,747,959 | 0 |
+| transportation | connector | 2025-09-24.0 | 385,487,757 | 2,797,905 | 385,586 | 954,440 | 381,735,412 |
+| transportation | segment | 2025-09-24.0 | 328,539,289 | 2,259,885 | 746,326 | 5,192,746 | 321,086,658 |
+
+## Field Coverage Stats
+Counts represent number of records with that field populated (not the field's value).
+
+### buildings/building — 2025-09-24.0 (latest)
+- height: 200,682,729
+- total_count: 2,534,851,890
+
+### places/place — 2025-09-24.0 (latest)
+- phones: 61,370,591
+- total_count: 71,624,529
+
+## Class Distribution Stats (Addresses by Country)
+Q6: addresses/address — country-level record counts for last 2 releases.
+
+### addresses/address — 2025-08-20.1
+| country | count |
+|---------|-------|
+| US | 112,435,837 |
+| BR | 89,899,299 |
+| MX | 28,407,305 |
+| FR | 26,068,954 |
+| IT | 25,949,445 |
+| JP | 19,576,027 |
+| CA | 17,062,677 |
+| DE | 15,847,833 |
+| AU | 15,721,026 |
+| ES | 13,188,482 |
+| NL | 9,869,902 |
+| TW | 9,505,574 |
+| CO | 7,786,046 |
+| PL | 7,669,619 |
+| BE | 6,889,452 |
+| PT | 5,676,331 |
+| CL | 4,219,970 |
+| DK | 3,930,542 |
+| FI | 3,748,102 |
+| CH | 3,257,188 |
+| CZ | 2,994,390 |
+| NO | 2,571,756 |
+| AT | 2,492,155 |
+| NZ | 2,381,370 |
+| EE | 2,215,931 |
+| HR | 1,674,311 |
+| SK | 1,630,271 |
+| UY | 1,059,695 |
+| LT | 1,036,251 |
+| SI | 576,642 |
+| LV | 544,380 |
+| HK | 182,155 |
+| LU | 164,415 |
+| SG | 141,116 |
+| IS | 136,857 |
+| GL | 20,293 |
+| LI | 12,876 |
+
+### addresses/address — 2025-09-24.0
+| country | count |
+|---------|-------|
+| US | 112,435,837 |
+| BR | 89,899,299 |
+| MX | 28,407,305 |
+| FR | 26,068,954 |
+| IT | 25,949,445 |
+| JP | 19,576,027 |
+| CA | 17,062,677 |
+| DE | 15,847,833 |
+| AU | 15,721,026 |
+| ES | 13,188,482 |
+| NL | 9,869,902 |
+| TW | 9,505,574 |
+| CO | 7,786,046 |
+| PL | 7,669,619 |
+| BE | 6,889,452 |
+| PT | 5,676,331 |
+| CL | 4,219,970 |
+| DK | 3,930,542 |
+| FI | 3,748,102 |
+| CH | 3,257,188 |
+| CZ | 2,994,390 |
+| NO | 2,571,756 |
+| AT | 2,492,155 |
+| NZ | 2,381,370 |
+| EE | 2,215,931 |
+| HR | 1,674,311 |
+| SK | 1,630,271 |
+| UY | 1,059,695 |
+| LT | 1,036,251 |
+| SI | 576,642 |
+| LV | 544,380 |
+| HK | 182,155 |
+| LU | 164,415 |
+| SG | 141,116 |
+| IS | 136,857 |
+| GL | 20,293 |
+| LI | 12,876 |

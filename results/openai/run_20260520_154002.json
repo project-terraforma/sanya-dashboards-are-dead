@@ -1,0 +1,53 @@
+{
+  "llm": "openai",
+  "model": "gpt-4o",
+  "timestamp": "20260520_154002",
+  "artifact_path": "artifact/artifact_abby_v1.txt",
+  "benchmark_path": "questions/bench_abby_v1.json",
+  "results": [
+    {
+      "id": "Q1",
+      "error": "Error code: 403 - {'error': {'message': 'Project `proj_mWumD5ok6W16qQuNVkSqFc0I` does not have access to model `gpt-4o`', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}"
+    },
+    {
+      "id": "Q2",
+      "error": "Error code: 403 - {'error': {'message': 'Project `proj_mWumD5ok6W16qQuNVkSqFc0I` does not have access to model `gpt-4o`', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}"
+    },
+    {
+      "id": "Q3",
+      "error": "Error code: 403 - {'error': {'message': 'Project `proj_mWumD5ok6W16qQuNVkSqFc0I` does not have access to model `gpt-4o`', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}"
+    },
+    {
+      "id": "Q4",
+      "error": "Error code: 403 - {'error': {'message': 'Project `proj_mWumD5ok6W16qQuNVkSqFc0I` does not have access to model `gpt-4o`', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}"
+    },
+    {
+      "id": "Q5a",
+      "error": "Error code: 403 - {'error': {'message': 'Project `proj_mWumD5ok6W16qQuNVkSqFc0I` does not have access to model `gpt-4o`', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}"
+    },
+    {
+      "id": "Q5b",
+      "error": "Error code: 403 - {'error': {'message': 'Project `proj_mWumD5ok6W16qQuNVkSqFc0I` does not have access to model `gpt-4o`', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}"
+    },
+    {
+      "id": "Q5c",
+      "error": "Error code: 403 - {'error': {'message': 'Project `proj_mWumD5ok6W16qQuNVkSqFc0I` does not have access to model `gpt-4o`', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}"
+    },
+    {
+      "id": "Q6",
+      "error": "Error code: 403 - {'error': {'message': 'Project `proj_mWumD5ok6W16qQuNVkSqFc0I` does not have access to model `gpt-4o`', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}"
+    },
+    {
+      "id": "Q8",
+      "error": "Error code: 403 - {'error': {'message': 'Project `proj_mWumD5ok6W16qQuNVkSqFc0I` does not have access to model `gpt-4o`', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}"
+    },
+    {
+      "id": "Q9",
+      "error": "Error code: 403 - {'error': {'message': 'Project `proj_mWumD5ok6W16qQuNVkSqFc0I` does not have access to model `gpt-4o`', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}"
+    },
+    {
+      "id": "Q10",
+      "error": "Error code: 403 - {'error': {'message': 'Project `proj_mWumD5ok6W16qQuNVkSqFc0I` does not have access to model `gpt-4o`', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}"
+    }
+  ]
+}
