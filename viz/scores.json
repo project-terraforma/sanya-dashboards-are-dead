@@ -1,0 +1,581 @@
+[
+  {
+    "file": "context-files-analysis/context-files/context_perfect.txt",
+    "score": 100,
+    "deductions": [],
+    "issues": [],
+    "statuses": {
+      "q1_schema": "SUPPORTED",
+      "q2_statistics": "SUPPORTED",
+      "q3_coverage": "SUPPORTED",
+      "q4_missing_data": "SUPPORTED",
+      "q5_version": "SUPPORTED",
+      "q6_prompt_examples": "SUPPORTED",
+      "q7_unsupported": "SUPPORTED"
+    },
+    "section_hits": {
+      "instructions": [
+        "role",
+        "rules",
+        "only use",
+        "do not infer",
+        "do not guess",
+        "answer",
+        "reference"
+      ],
+      "schema": [
+        "schema",
+        "column",
+        "columns",
+        "field",
+        "fields",
+        "attribute",
+        "definition",
+        "definitions",
+        "type"
+      ],
+      "statistics": [
+        "statistics",
+        "total",
+        "records",
+        "count",
+        "counts",
+        "percentage",
+        "percent"
+      ],
+      "coverage": [
+        "coverage",
+        "country",
+        "countries",
+        "geographic",
+        "source",
+        "sources",
+        "theme",
+        "themes",
+        "availability"
+      ],
+      "missing_data": [
+        "missing",
+        "missing values",
+        "missingness",
+        "null",
+        "incomplete",
+        "unavailable"
+      ],
+      "version": [
+        "release",
+        "version",
+        "generated",
+        "date",
+        "month"
+      ],
+      "examples": [
+        "example",
+        "examples",
+        "queries",
+        "user:"
+      ],
+      "unsupported_guidance": [
+        "cannot answer",
+        "not stated",
+        "unavailable",
+        "do not guess",
+        "do not infer",
+        "not provided",
+        "only use information contained"
+      ]
+    },
+    "has_section": {
+      "instructions": true,
+      "schema": true,
+      "statistics": true,
+      "coverage": true,
+      "missing_data": true,
+      "version": true,
+      "examples": true,
+      "unsupported_guidance": true
+    }
+  },
+  {
+    "file": "context-files-analysis/context-files/context_Ashwin.txt",
+    "score": 74,
+    "deductions": [
+      [
+        "q4_missing_data",
+        "RISKY",
+        -10
+      ],
+      [
+        "q7_unsupported",
+        "RISKY",
+        -10
+      ],
+      [
+        "rubric_prompt_risks",
+        "ISSUES",
+        -6
+      ]
+    ],
+    "issues": [
+      "missing_data_guidance_weak",
+      "unsupported_questions_not_explained"
+    ],
+    "statuses": {
+      "q1_schema": "SUPPORTED",
+      "q2_statistics": "SUPPORTED",
+      "q3_coverage": "SUPPORTED",
+      "q4_missing_data": "RISKY",
+      "q5_version": "SUPPORTED",
+      "q6_prompt_examples": "SUPPORTED",
+      "q7_unsupported": "RISKY"
+    },
+    "section_hits": {
+      "instructions": [
+        "role",
+        "constraint",
+        "constraints",
+        "answer",
+        "reference"
+      ],
+      "schema": [
+        "schema",
+        "column",
+        "columns",
+        "attribute",
+        "attributes",
+        "definition",
+        "definitions",
+        "type"
+      ],
+      "statistics": [
+        "statistics",
+        "total",
+        "features",
+        "count",
+        "counts",
+        "percentage",
+        "percent",
+        "top values",
+        "distribution"
+      ],
+      "coverage": [
+        "coverage",
+        "country",
+        "countries",
+        "geographic",
+        "source",
+        "sources",
+        "theme",
+        "themes",
+        "varies"
+      ],
+      "missing_data": [],
+      "version": [
+        "release",
+        "version",
+        "generated"
+      ],
+      "examples": [
+        "example",
+        "examples",
+        "prompt",
+        "prompts",
+        "query"
+      ],
+      "unsupported_guidance": []
+    },
+    "has_section": {
+      "instructions": true,
+      "schema": true,
+      "statistics": true,
+      "coverage": true,
+      "missing_data": false,
+      "version": true,
+      "examples": true,
+      "unsupported_guidance": false
+    }
+  },
+  {
+    "file": "context-files-analysis/context-files/context_ATLAS-9-24.txt",
+    "score": 87,
+    "deductions": [
+      [
+        "q4_missing_data",
+        "RISKY",
+        -10
+      ],
+      [
+        "rubric_prompt_risks",
+        "ISSUES",
+        -3
+      ]
+    ],
+    "issues": [
+      "missing_data_guidance_weak"
+    ],
+    "statuses": {
+      "q1_schema": "SUPPORTED",
+      "q2_statistics": "SUPPORTED",
+      "q3_coverage": "SUPPORTED",
+      "q4_missing_data": "RISKY",
+      "q5_version": "SUPPORTED",
+      "q6_prompt_examples": "SUPPORTED",
+      "q7_unsupported": "SUPPORTED"
+    },
+    "section_hits": {
+      "instructions": [
+        "role",
+        "rules",
+        "only use",
+        "do not infer",
+        "answer",
+        "reference"
+      ],
+      "schema": [
+        "attribute",
+        "attributes",
+        "definition",
+        "definitions",
+        "type",
+        "dataset structure"
+      ],
+      "statistics": [
+        "statistics",
+        "total",
+        "records",
+        "features",
+        "count",
+        "counts",
+        "percentage",
+        "percent",
+        "distribution"
+      ],
+      "coverage": [
+        "coverage",
+        "country",
+        "countries",
+        "source",
+        "sources",
+        "theme",
+        "themes",
+        "availability"
+      ],
+      "missing_data": [
+        "unavailable"
+      ],
+      "version": [
+        "release",
+        "version",
+        "month"
+      ],
+      "examples": [
+        "example",
+        "prompt",
+        "queries",
+        "user:"
+      ],
+      "unsupported_guidance": [
+        "unavailable",
+        "do not infer",
+        "only use information contained"
+      ]
+    },
+    "has_section": {
+      "instructions": true,
+      "schema": true,
+      "statistics": true,
+      "coverage": true,
+      "missing_data": false,
+      "version": true,
+      "examples": true,
+      "unsupported_guidance": true
+    }
+  },
+  {
+    "file": "context-files-analysis/context-files/context_ATLASV4-8-20.txt",
+    "score": 87,
+    "deductions": [
+      [
+        "q4_missing_data",
+        "RISKY",
+        -10
+      ],
+      [
+        "rubric_prompt_risks",
+        "ISSUES",
+        -3
+      ]
+    ],
+    "issues": [
+      "missing_data_guidance_weak"
+    ],
+    "statuses": {
+      "q1_schema": "SUPPORTED",
+      "q2_statistics": "SUPPORTED",
+      "q3_coverage": "SUPPORTED",
+      "q4_missing_data": "RISKY",
+      "q5_version": "SUPPORTED",
+      "q6_prompt_examples": "SUPPORTED",
+      "q7_unsupported": "SUPPORTED"
+    },
+    "section_hits": {
+      "instructions": [
+        "role",
+        "rules",
+        "only use",
+        "do not infer",
+        "answer",
+        "reference"
+      ],
+      "schema": [
+        "attribute",
+        "attributes",
+        "definition",
+        "definitions",
+        "type",
+        "dataset structure"
+      ],
+      "statistics": [
+        "statistics",
+        "total",
+        "records",
+        "features",
+        "count",
+        "counts",
+        "percentage",
+        "percent",
+        "distribution"
+      ],
+      "coverage": [
+        "coverage",
+        "country",
+        "countries",
+        "source",
+        "sources",
+        "theme",
+        "themes",
+        "availability"
+      ],
+      "missing_data": [
+        "unavailable"
+      ],
+      "version": [
+        "version",
+        "month"
+      ],
+      "examples": [
+        "example",
+        "prompt",
+        "queries",
+        "user:"
+      ],
+      "unsupported_guidance": [
+        "unavailable",
+        "do not infer",
+        "only use information contained"
+      ]
+    },
+    "has_section": {
+      "instructions": true,
+      "schema": true,
+      "statistics": true,
+      "coverage": true,
+      "missing_data": false,
+      "version": true,
+      "examples": true,
+      "unsupported_guidance": true
+    }
+  },
+  {
+    "file": "context-files-analysis/context-files/context_fetch.txt",
+    "score": 87,
+    "deductions": [
+      [
+        "q4_missing_data",
+        "RISKY",
+        -10
+      ],
+      [
+        "rubric_prompt_risks",
+        "ISSUES",
+        -3
+      ]
+    ],
+    "issues": [
+      "missing_data_guidance_weak"
+    ],
+    "statuses": {
+      "q1_schema": "SUPPORTED",
+      "q2_statistics": "SUPPORTED",
+      "q3_coverage": "SUPPORTED",
+      "q4_missing_data": "RISKY",
+      "q5_version": "SUPPORTED",
+      "q6_prompt_examples": "SUPPORTED",
+      "q7_unsupported": "SUPPORTED"
+    },
+    "section_hits": {
+      "instructions": [
+        "role",
+        "rules",
+        "only use",
+        "do not infer",
+        "answer",
+        "reference"
+      ],
+      "schema": [
+        "attribute",
+        "attributes",
+        "definition",
+        "definitions",
+        "type",
+        "dataset structure"
+      ],
+      "statistics": [
+        "statistics",
+        "total",
+        "records",
+        "features",
+        "count",
+        "counts",
+        "percentage",
+        "percent",
+        "distribution"
+      ],
+      "coverage": [
+        "coverage",
+        "country",
+        "countries",
+        "source",
+        "sources",
+        "theme",
+        "themes",
+        "availability"
+      ],
+      "missing_data": [
+        "unavailable"
+      ],
+      "version": [
+        "release",
+        "version",
+        "month"
+      ],
+      "examples": [
+        "example",
+        "prompt",
+        "queries",
+        "user:"
+      ],
+      "unsupported_guidance": [
+        "unavailable",
+        "do not infer",
+        "only use information contained"
+      ]
+    },
+    "has_section": {
+      "instructions": true,
+      "schema": true,
+      "statistics": true,
+      "coverage": true,
+      "missing_data": false,
+      "version": true,
+      "examples": true,
+      "unsupported_guidance": true
+    }
+  },
+  {
+    "file": "context-files-analysis/context-files/context_fetch_4-30.txt",
+    "score": 87,
+    "deductions": [
+      [
+        "q4_missing_data",
+        "RISKY",
+        -10
+      ],
+      [
+        "rubric_prompt_risks",
+        "ISSUES",
+        -3
+      ]
+    ],
+    "issues": [
+      "missing_data_guidance_weak"
+    ],
+    "statuses": {
+      "q1_schema": "SUPPORTED",
+      "q2_statistics": "SUPPORTED",
+      "q3_coverage": "SUPPORTED",
+      "q4_missing_data": "RISKY",
+      "q5_version": "SUPPORTED",
+      "q6_prompt_examples": "SUPPORTED",
+      "q7_unsupported": "SUPPORTED"
+    },
+    "section_hits": {
+      "instructions": [
+        "role",
+        "rules",
+        "only use",
+        "do not infer",
+        "answer",
+        "reference"
+      ],
+      "schema": [
+        "attribute",
+        "attributes",
+        "definition",
+        "definitions",
+        "type",
+        "dataset structure"
+      ],
+      "statistics": [
+        "statistics",
+        "total",
+        "records",
+        "features",
+        "count",
+        "counts",
+        "percentage",
+        "percent",
+        "distribution"
+      ],
+      "coverage": [
+        "coverage",
+        "country",
+        "countries",
+        "source",
+        "sources",
+        "theme",
+        "themes",
+        "availability"
+      ],
+      "missing_data": [
+        "unavailable"
+      ],
+      "version": [
+        "version",
+        "month"
+      ],
+      "examples": [
+        "example",
+        "examples",
+        "prompt",
+        "queries",
+        "user:"
+      ],
+      "unsupported_guidance": [
+        "unavailable",
+        "do not infer",
+        "only use information contained"
+      ]
+    },
+    "has_section": {
+      "instructions": true,
+      "schema": true,
+      "statistics": true,
+      "coverage": true,
+      "missing_data": false,
+      "version": true,
+      "examples": true,
+      "unsupported_guidance": true
+    }
+  }
+]
