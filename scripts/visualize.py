@@ -393,8 +393,8 @@ def plot_llm_accuracy():
     for xi, (p, (c, t)) in zip(x, zip(pct, counts)):
         ax.text(xi, p + 2, f"{p:.0f}%", ha="center", fontsize=12,
                 fontweight="bold", color=PALETTE["ink"])
-        ax.text(xi, -6, f"{c}/{t}", ha="center", fontsize=9,
-                color=PALETTE["muted"])
+        ax.text(xi, p / 2, f"{c}/{t}", ha="center", fontsize=10,
+                color="white", fontweight="bold")
 
     fig.tight_layout()
     out = VIZ / "llm_accuracy.png"
@@ -455,9 +455,14 @@ def plot_gemini_hallucination_ab():
         ax.text(xi, p + (max(pcts + [10]) * 0.04),
                 f"{p:.0f}%", ha="center", fontsize=14,
                 fontweight="bold", color=PALETTE["ink"])
-        ax.text(xi, -max(pcts + [10]) * 0.07,
-                f"{h}/{t} hallucinated", ha="center", fontsize=9,
-                color=PALETTE["muted"])
+        if p > 5:
+            ax.text(xi, p / 2, f"{h} / {t}",
+                    ha="center", fontsize=10, color="white",
+                    fontweight="bold")
+        else:
+            ax.text(xi, p + (max(pcts + [10]) * 0.12),
+                    f"{h} / {t} hallucinated",
+                    ha="center", fontsize=9, color=PALETTE["muted"])
 
     fig.tight_layout()
     out = VIZ / "gemini_hallucination_ab.png"
